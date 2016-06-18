@@ -52,7 +52,10 @@ Tree.prototype.getClosestCommonAncestor = function(person1,person2){
     return path1[minLength-1];    
   }
 };
-
+//first, recognize that you can start at the top of the family tree, you don't have to start at the bottom
+//this is possible because getAncestorPath is a method on Tree.prototype, so the keyword this, will actually 
+//refer to the persons who called getAncestorPath. this fact is reflected when we invoke recurse
+//we pass in this as the first node.
 Tree.prototype.getAncestorPath = function(person1){
   var result = []; 
     
