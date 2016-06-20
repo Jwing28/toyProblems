@@ -8,6 +8,14 @@
 //Traverse a linklist: linear
 //addTotail / removeHead: constant
 
+//PROS
+  Dynamic size - Array is fixed
+  Ease of insertion - Insert/delete = constant
+//CONS
+  -Random access not allowed have to go through each node to get to 
+  a specific one (i.e. cannot do a binary search through LL, but can in array)
+  -Extra memory space required - because of pointer property
+  
 
 var LinkedList = function (initialValue) {
   if(initialValue === undefined){
