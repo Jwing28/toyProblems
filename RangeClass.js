@@ -1,5 +1,12 @@
 //implement a range class
 
+//The step is the interval at which elements are included. For instance, 
+//a step of 1 includes every element in the range, while a step of 2 includes
+//every other element.
+
+//You should allow a negative value for ‘step’ to count backwards. If no step 
+//is provided and the start is more than the end, assume we’re counting backwards.
+
 //range class
 var Range = function(start, end, step) {
 if(!start){
@@ -55,3 +62,16 @@ Range.prototype.includes = function (val) {
   }
   return flag;
 };
+
+//examples
+ var myRange = new Range(0,10); // a new range representing the numbers between 0 and 10 (inclusively)
+
+ var evenNumbers = new Range(2,8,2); // A range with the even numbers 2, 4, 6, and 8.
+
+ evenNumbers.each(function(val){ console.log(val+'!'); }); //Prints '2! 4! 6! 8!'
+
+ evenNumbers.size() //4
+
+ evenNumbers.includes(2) //True
+
+ evenNumbers.include(3) //False
