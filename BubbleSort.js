@@ -1,16 +1,30 @@
-/*It works by starting at the first element of an array and comparing it to the second element:
-If the first element is greater than the second element, it swaps the two.
-It then compares the second to the third, and the third to the fourth, and so on.
-In this way, the largest values ‘bubble’ to the end of the array.
-Once it gets to the end of the array, it starts over and repeats the process until the array is sorted numerically.*/
+var bubbleSort = function (array){
+  var temp = 0; swapped = 0;
 
-var bubbleSort = function(array) {
-  var compare1 = 0; compare2 = 0; result = []; counter = 0; 
-  //building an array where array values are sorted in place
-  while (result.length <= array.length){
-    compare1 = array[counter];
-    compare2 = array[++counter];//counter is incremented here and returned unlike counter++
-    compare1 > compare2 ? result.push(compare2,compare1) : result.push(compare1,compare2);  
-  }
-  return result;
+  for (var i = 0; i < array.length-1; i++){
+    //if values need swap , swap
+      //everytime, increment counter  
+    //if you reach the end of the loop
+      //check if counter is 0
+        //if so that means you never swapped and so you can return 
+      //if counter > 0
+        //reset i so you go back and do it again
+        
+    if(array[i] > array[i+1]){
+      temp = array[i];
+      array[i] = array[i+1];
+      array[i+1] = temp;
+      swapped++;
+    }
+    
+    if(i === array.length-2){
+      if(swapped === 0){
+        return array;//it's sorted
+      }else{
+        i = 0; 
+        swapped = 0;
+      }
+    }    
+  }    
 };
+
