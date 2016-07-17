@@ -31,7 +31,30 @@ var goDown = function () {
   right--;
   goLeft();
 };
-  
+
+var goLeft = function () {
+  //does left === right? if so return result
+  if(left === right){
+    return result;
+  } 
+  for (var i = right-1; i >= left; i--){
+    result.push(matrix[bottom-1][i]);
+  }
+  bottom--;
+  goUp();
+};
+
+var goUp = function () {
+  //does top === bottom ? return result
+  if(top === bottom){
+    return result;
+  }
+  for (var i = bottom-1; i>= top; i--){
+    result.push(matrix[i][left]);
+  }
+  left++;
+  goRight();
+};  
   goRight();
   return result;
 }
