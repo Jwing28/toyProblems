@@ -1,6 +1,7 @@
 //given an n x n matrix,
 //write a function that will return the diagonal difference
-
+//diagonal difference is the difference (absolute) between 
+//the sum of the values of one diagonal in the matrix to the other.
 
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
